@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Libera API Documentation</title>
+</head>
+<body>
+<!-- Header -->
+    <div class="container">
+        <div class="column">
+            <div class="apiBody">
+                <h1>Book API Documentation</h1>
+            </div>
+        </div>
+    </div>
+    
+<!-- First Column - Get All Books -->
+    <div class="container">
+        <div class="column">
+            <div class="apiBody">
+                <h2>1. Get All Books</h2>
+            
+                <strong>Endpoint:</strong>
+                <code class="code">[GET] /book</code>
+                <p><strong>Description:</strong> <span class="code"> Get a list of all books. </span></p>
+                <p><strong>Example Response:</strong></p>
+                <pre><code class="code">
+[
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald"
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee"
+    },
+    // ... more books
+        
+]</code></pre>
+            </div>
+        </div>
+
+<!-- Second Column - Get Book by ID -->
+        <div class="column">
+            <div class="apiBody">
+                <h2>2. Get Book by Id</h2>
+            
+                <strong>Endpoint:</strong>
+                <code class="code">[GET] /book/{id}</code>
+                <p><strong>Description:</strong> <span class="code"> Get a single book. </span></p>
+            
+                <p><strong>Request Parameters:</strong></p>
+            <pre><code><span class="code">id: The ID of the book to be gotten.</span></code></pre>
+
+                <p><strong>Example Response:</strong></p>
+                <pre><code class="code">
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald"
+    }
+                </code></pre>
+            </div>
+        </div>
+
+<!-- Third Column - Create Book -->
+        <div class="column">
+            <div class="apiBody">
+                <h2>3. Create a New Book</h2>
+                
+                <strong>Endpoint:</strong>
+                <code class="code">[POST] /book</code>
+                
+                <p><strong>Description:</strong> <span class="code">Create a new book by providing the book data in the request body. </span></p>
+                
+                <p><strong>Request Body:</strong></p>
+                <pre><code class="code">
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger"
+    }</code></pre>
+            
+                <p><strong>Example Response:</strong></p>
+                <pre><code class="code">
+    {
+        "id": 3,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger"
+    }</code></pre>
+            </div>
+        </div>
+
+<!-- Fourth Column - Update Books -->
+        <div class="column">
+            <div class="apiBody">
+            <h2>4. Update Book Information</h2>
+            
+            <strong>Endpoint:</strong>
+            <code class="code">[PUT] /book/{id}</code>
+            
+            <p><strong>Description:</strong> <span class="code">Update information for a specific book identified by its ID.</span> </p>
+            
+            <p><strong>Request Parameters:</strong></p>
+            <pre><code><span class="code">id: The ID of the book to be updated.</span></code></pre>
+            
+            <p><strong>Request Body:</strong></p>
+            <pre><code class="code">
+    {
+        "title": "New Title",
+        "author": "New Author"
+    }</code></pre>
+            
+            <p><strong>Example Response:</strong></p>
+            <pre><code class="code">
+    {
+        "title": "New Title",
+        "author": "New Author"
+    }</code></pre>
+            </div>
+        </div>
+        
+<!-- Fifth Column - Delete Book -->
+        <div class="column">
+            <div class="apiBody">
+                <h2>5. Delete Book</h2>
+                
+                <strong>Endpoint:</strong>
+                <code class="code">[DELETE] /book/{id}</code>
+                <p><strong>Description:</strong> <span class="code"> Deletes a single book. </span></p>
+                
+                <p><strong>Request Parameters:</strong></p>
+            <pre><code><span class="code">id: The ID of the book to be deleted.</span></code></pre>
+            </div>
+        </div>
+    </div>
+        
+<!-- Notes - End -->
+    <div class="column">
+        <div class="apiBody">
+            <h2 >Note:</h3>
+            <ul>
+                <li class="code">>All endpoints may return an error status (e.g., 500 Server Error) if there are issues with the API or data processing.</li>
+                <li class="code">Ensure proper error handling on the client side to handle these cases.</li>
+            </ul>
+        </div>
+    </div>
+
+        </body>
+        </html>
